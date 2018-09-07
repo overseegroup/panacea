@@ -11,7 +11,8 @@ class PanaceaApi
     const FORMAT_JSON = 3;
 
     /** @var string */
-    protected $apiUrl = 'bli.panaceamobile.com/json';
+    // protected $apiUrl = 'bli.panaceamobile.com/json';
+    protected $url;
 
     /** @var HttpClient */
     protected $httpClient;
@@ -25,11 +26,12 @@ class PanaceaApi
     /** @var string */
     protected $sender;
 
-    public function __construct($login, $api, $sender)
+    public function __construct($login, $api, $sender, $url)
     {
         $this->login = $login;
         $this->api = $api;
         $this->sender = $sender;
+        $this->url = $url;
 
         $this->httpClient = new HttpClient([
             'timeout' => 5,
@@ -58,7 +60,7 @@ class PanaceaApi
 
         try {
             $request = $this->httpClient->get(
-			$this->apiUrl,
+			$this->url,
 				[
 					'query' => $params
 				]

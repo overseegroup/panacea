@@ -11,7 +11,7 @@ class PanaceaServiceProvider extends ServiceProvider
         $this->app->singleton(PanaceaApi::class, function ($app) {
             $config = config('services.panacea');
 
-            return new PanaceaApi($config['login'], $config['api'], $config['sender']);
+            return new PanaceaApi($config['login'], $config['api'], $config['sender'], $config['url']);
         });
     }
 }
