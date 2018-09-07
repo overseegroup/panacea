@@ -74,7 +74,7 @@ In order for this package to know which number to send the message to, it will l
      *
      * @return string
      */
-    public function routeNotificationForPanaceaMobile()
+    public function routeNotificationForPanacea()
     {
         return $this->mobile_number; // or whatever database field you are storing the number field under
         
