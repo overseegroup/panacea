@@ -20,15 +20,15 @@ class PanaceaApi
     protected $login;
 
     /** @var string */
-    protected $secret;
+    protected $api;
 
     /** @var string */
     protected $sender;
 
-    public function __construct($login, $secret, $sender)
+    public function __construct($login, $api, $sender)
     {
         $this->login = $login;
-        $this->secret = $secret;
+        $this->api = $api;
         $this->sender = $sender;
 
         $this->httpClient = new HttpClient([
@@ -50,7 +50,7 @@ class PanaceaApi
         $params = array_merge([
 			'action' 	=> 'message_send',
             'username'  => $this->login,
-            'password'  => $this->secret,
+            'password'  => $this->api,
             'from' 		=> $this->sender,
             'to' 		=> $recipient,
         ], $params);
