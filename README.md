@@ -31,6 +31,7 @@ Once you have these deetals on hand, add to your `config/services.php` file:
 'panacea' => [
     'login'  => env('PANACEA_LOGIN'), // Your Username
     'api' => env('PANACEA_API'), // Your API Token
+    'url' => env('PANACEA_URL'), // Your API URL - default: bli.panaceamobile.com/json
     'sender' => '0000000000' // Default Sending Number
 ]
 ```
@@ -62,7 +63,7 @@ class SendSMS extends Notification
 
 ## Notifiable Configuration
 
-In order for this package to know which number to send the message to, it will look for the `phone_number` attribute of the Notifiable model. Add the following code to your Notifiable model:
+In order for this package to know which number to send the message to, it will look for the `mobile_number` attribute of the Notifiable model. Add the following code to your Notifiable model:
 
 ```php
 
