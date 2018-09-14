@@ -1,5 +1,5 @@
 # Panacea Mobile
-This package makes it easy to send notifications using [PanaceaMobile](https://www.panaceamobile.com/) with Laravel 5.5
+This package makes it easy to send notifications using [PanaceaMobile](https://www.panaceamobile.com/) with Laravel 5.6+
 
 ## Installation
 
